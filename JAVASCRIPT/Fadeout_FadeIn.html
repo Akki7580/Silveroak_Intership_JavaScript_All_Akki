@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title> FadeIn_Fadeout Demo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#BtnFadeOut").attr("disabled",true);
+                $("#BtnFadeIn").click(function(){
+                    if(confirm("Are You Sure??"))
+                    {
+                        $("#MyDiv1").fadeIn(1000);
+                        $("#MyDiv2").fadeIn(2000);
+                        $("#MyDiv3").fadeIn(3000);
+                        $("#BtnFadeOut").attr("disabled",false);
+                        $("#BtnFadeIn").attr("disabled",true);
+                    }
+                });
+                $("#BtnFadeOut").click(function(){
+                    if(confirm("Are You Sure??"))
+                    {
+                        $("#MyDiv1").fadeOut(1000);
+                        $("#MyDiv2").fadeOut(2000);
+                        $("#MyDiv3").fadeOut(3000);
+                        $("#BtnFadeOut").attr("disabled",true);
+                        $("#BtnFadeIn").attr("disabled",false);
+                    }
+                });
+                $("#BtnFadeIn").click(function(){
+                    if(confirm("Are You Sure??"))
+                    {
+                        $("#MyDiv1").fadeToggle(1000);
+                        $("#MyDiv2").fadeToggle(2000);
+                        $("#MyDiv3").fadeToggle(3000);
+                        
+                    }
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <button id="BtnFadeIn">Click me for Fade In</button>&nbsp;&nbsp;&nbsp;<button id="BtnFadeOut">Click me for Fade Out</button>&nbsp;&nbsp;<button id="BtnFadeToggle">Click me for Fade In/Out</button>
+        <div id="MyDiv1"  style="height:100px; width: 70%; background-color: royalblue;display:none;"></div><br/>
+        <div id="MyDiv2" style="height:100px; width:70%; background-color: red;display:none;"></div><br/>
+        <div id="MyDiv3" style="height: 100px;width: 70%;background-color: yellow; display: none;"></div><br />
+
+
+    </body>
+</html>
